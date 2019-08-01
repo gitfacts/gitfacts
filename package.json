@@ -1,0 +1,29 @@
+{
+  "name": "gitfacts",
+  "version": "1.0.0",
+  "description": "A GitHub GUI for developers and recruiters",
+  "main": "./server/index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "volleyball": "^1.5.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitfacts/gitfacts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gitfacts/gitfacts/issues"
+  },
+  "homepage": "https://github.com/gitfacts/gitfacts#readme"
+}
