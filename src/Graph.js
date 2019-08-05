@@ -15,11 +15,10 @@ export default class Graph extends React.Component {
 
   async componentDidMount() {
     const { client } = this.props
+    console.log(client)
     const chal = await client.query({
       query: gql`
       query listRepos{
-        username: "EricBot89"
-        
          search(query:"code", type:REPOSITORY, first:20){  
          repositoryCount
          pageInfo{
