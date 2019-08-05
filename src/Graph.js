@@ -13,53 +13,53 @@ export default class Graph extends React.Component {
 
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { client } = this.props
-    client.query({
+    const chal = await client.query({
       query: gql`
-    query listRepos{
-      rateLimit{
-       cost
-       remaining
-       resetAt
-      }
-      search(query:"love", type:REPOSITORY, first:20){  
-       repositoryCount
-       pageInfo{
-        endCursor
-        startCursor
-       }
-       edges{
-        node{
-         ... on Repository{
-          id
-          name
-          createdAt 
-          description 
-          isArchived
-          isPrivate
-          url
-          owner{
-           login
-           id
-           __typename
-           url
-          }
-          assignableUsers{
-           totalCount
-          }
-          licenseInfo{
-           key
-          }
-          defaultBranchRef{
-           target{
-            ... on Commit{
-             history(first:10){
-              totalCount
-              edges{
-               node{
-                ... on Commit{
-                 committedDate
+      query listRepos{
+        username: "EricBot89"
+        
+         search(query:"code", type:REPOSITORY, first:20){  
+         repositoryCount
+         pageInfo{
+          endCursor
+          startCursor
+         }
+         edges{
+          node{
+           ... on Repository{
+            id
+            name
+            createdAt 
+            description 
+            isArchived
+            isPrivate
+            url
+            owner{
+             login
+             id
+             __typename
+             url
+            }
+            assignableUsers{
+
+             totalCount
+            }
+            licenseInfo{
+             key
+            }
+            defaultBranchRef{
+             target{
+              ... on Commit{
+               history(first:10){
+                totalCount
+                edges{
+                 node{
+                  ... on Commit{
+                   committedDate
+                  }
+                 }
                 }
                }
               }
@@ -69,10 +69,9 @@ export default class Graph extends React.Component {
           }
          }
         }
-       }
-      }
-     }
-    `})
+       }`
+  })
+    console.log(chal)
   }
 
   render() {
