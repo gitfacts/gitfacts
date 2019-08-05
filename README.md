@@ -10,3 +10,6 @@ But is it the only way to use GitFacts? Imagine you are deciding if you want to 
 GitFacts, therefore, is a flexible and versatile tool allowing you to navigate GitHub information and display it in format that is easily apprehended. Divide the data and conquer the world!
 
 
+## adding an API key
+
+to run this locally, you'll need a github api token. Go to your account settings, click developer options in the side pane, and generate an API key from there. Then make a secrets.js file in the /src directory with the line export const TOKEN = "YOUR_TOKEN_HERE" 
